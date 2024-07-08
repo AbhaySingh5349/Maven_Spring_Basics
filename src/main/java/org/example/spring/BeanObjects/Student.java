@@ -1,4 +1,4 @@
-package org.example.spring;
+package org.example.spring.BeanObjects;
 
 public class Student {
     String name;
