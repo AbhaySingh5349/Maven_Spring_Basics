@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!-- Method 1: uses default constructor, then set properties -->
+    <bean id="student" class="org.example.spring.Student">
+        <property name="name" value="abhay" />
+        <property name="rollNum" value="1" />
+        <property name="address" ref="address" />
+    </bean>
+
+    <!-- Method 2: creates parameterized constructor, then set properties -->
+    <bean id="student" class="org.example.spring.Student">
+        <constructor-arg value="abhay" />
+        <constructor-arg value="1" />
+        <constructor-arg ref="address" />
+    </bean>
+
+    <bean id="address" class="org.example.spring.Address">
+        <property name="pincode" value="250003" />
+        <property name="city" value="meerut"/>
+    </bean>
+
+</beans>
